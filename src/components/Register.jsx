@@ -1,15 +1,17 @@
+// src/components/Register.js
 import React, { useState } from 'react';
+import { showToast } from './Toaster';
 
 const Register = ({ toggleForm }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
     const user = { name, email, password };
     localStorage.setItem('user', JSON.stringify(user));
-    alert('Registration successful! Please log in.');
+    await showToast("success", "Successfully registered! Please, Log in");
     toggleForm();
   };
 

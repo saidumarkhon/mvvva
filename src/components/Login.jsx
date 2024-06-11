@@ -1,4 +1,6 @@
+// src/components/Login.js
 import React, { useState } from 'react';
+import { showToast } from '@components/Toaster';
 
 const Login = ({ toggleForm, onLoginSuccess }) => {
   const [email, setEmail] = useState('');
@@ -22,14 +24,15 @@ const Login = ({ toggleForm, onLoginSuccess }) => {
     return valid;
   };
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     if (validate()) {
       const user = JSON.parse(localStorage.getItem('user'));
       if (user && user.email === email && user.password === password) {
+        await showToast("success", "You logged in successfully");
         onLoginSuccess();
       } else {
-        alert('Invalid login credentials!');
+        await showToast("error", "Invalid login credentials!");
       }
     }
   };
@@ -68,4 +71,3 @@ const Login = ({ toggleForm, onLoginSuccess }) => {
 };
 
 export default Login;
-

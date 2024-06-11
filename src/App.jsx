@@ -7,6 +7,7 @@ import ProductCard from './pages/ProductCardPage';
 import ProductDetail from '@components/ProductCardPage/ProductDetail';
 import ExamAddTask from './pages/ExamAddTask';
 import Analytic from './pages/AnalyticsPage';
+import Toaster from './components/Toaster';
 
 function App() {
   const [isRegister, setIsRegister] = useState(false);
@@ -30,11 +31,12 @@ function App() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <Toaster />
       {isLoggedIn ? (
         <>
           <Router>
             <div className="flex bg-slate-600 w-full">
-              <Sidebar />
+              <Sidebar /> 
               <div className="flex-1 p-4">
                 <Routes>
                   <Route path="/" element={<Analytic />} />

@@ -3,6 +3,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaHome, FaCreditCard, FaUsers, FaChartBar, FaCog, FaFileAlt } from 'react-icons/fa';
 import { MdBarChart } from 'react-icons/md';
+import Toaster from './Toaster';
 
 const Sidebar = () => {
 
@@ -10,10 +11,7 @@ const Sidebar = () => {
 
   const links = [
     { name: "Add Task EXAM",            path: '/exam-add-task',  icon: <FaFileAlt className='inline-block size-5' /> },
-    { name: 'Product Cards',            path: '/products',           icon: <FaHome className='inline-block size-5' /> },
-    // { name: "Product Cards",            path: '/my-groups',      icon: <FaUsers className='inline-block size-5' /> },
-    // { name: "Reyting",          path: '/rating',    icon: <MdBarChart className='inline-block size-5' /> },
-    // { name: "Sozlamalar",       path: '/profile',   icon: <FaCog className='inline-block size-5' /> },
+    { name: 'Product Cards',            path: '/products',           icon: <FaHome className='inline-block size-5' /> }
   ];
   return (
     <div className="h-screen w-64 bg-gray-800 text-white flex flex-col sticky left-0 top-0">
@@ -31,6 +29,7 @@ const Sidebar = () => {
             {link.name}
           </Link>
         ))}
+        <Toaster />
       </nav>
     </div>
   );
