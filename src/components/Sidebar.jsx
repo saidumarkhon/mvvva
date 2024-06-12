@@ -3,7 +3,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaHome, FaCreditCard, FaUsers, FaChartBar, FaCog, FaFileAlt } from 'react-icons/fa';
 import { MdBarChart } from 'react-icons/md';
-import Toaster from './Toaster';
+import Toaster from './toaster';
 
 const Sidebar = () => {
 

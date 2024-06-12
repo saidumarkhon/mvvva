@@ -1,6 +1,5 @@
-// src/components/Register.js
 import React, { useState } from 'react';
-import { showToast } from './Toaster';
+import { showToast } from './toaster';
 
 const Register = ({ toggleForm }) => {
   const [name, setName] = useState('');
